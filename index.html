@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #box{
+        width: 400px;
+        height: 600px;
+        margin: 0 auto;
+        border: 1px solid #cccccc;
+        background-color: rgba(0, 0, 0, 0.3);
+        position: relative;
+    }
+    #name{
+        width: 380px;
+        height: 400px;
+        background-color: rgba(0, 0, 0, 0.2);
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        border-radius: 5px;
+
+    }
+    #star{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: #cccccc;
+        position: absolute;
+        bottom: 50px;
+        left: 50px;
+    }
+    #next{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: #cccccc;
+        position: absolute;
+        bottom: 50px;
+        right: 50px;
+    }
+    #box {
+        text-align: center;
+        line-height: 80px;
+    }
+    #name li{
+        width: 76px;
+        float: left;
+        list-style: none;
+        visibility: hidden;
+    }
+    </style>
+<div id="box">
+    <div id="name">
+        <ul>
+            <li>超财讯</li>
+            <li>尚辉邦</li>
+            <li>联广清</li>
+            <li>丰南频</li>
+            <li>纳迪通</li>
+        </ul>
+        <ul>
+            <li>超财讯</li>
+            <li>尚辉邦</li>
+            <li>联广清</li>
+            <li>丰南频</li>
+            <li>纳迪通</li>
+        </ul>
+        <ul>
+            <li>超财讯</li>
+            <li>尚辉邦</li>
+            <li>联广清</li>
+            <li>丰南频</li>
+            <li>纳迪通</li>
+        </ul>
+        <ul>
+            <li>超财讯</li>
+            <li>尚辉邦</li>
+            <li>联广清</li>
+            <li>丰南频</li>
+            <li>纳迪通</li>
+        </ul>
+        <ul>
+            <li>超财讯</li>
+            <li>尚辉邦</li>
+            <li>联广清</li>
+            <li>丰南频</li>
+            <li>纳迪通</li>
+        </ul>
+
+    </div>
+    <div id="star">开始</div>
+    <div id="next">下一个</div>
+</div>
+
+
+
+
+    <script src="jquery-1.12.4.js" ></script>
+    <script>
+    $(function(){
+$("#star").on("click",function(element){
+    var flag=0;
+    clearInterval(element.timeId)
+      element.timeId=setInterval(function(){
+        flag++;
+    // $("#star").on("click",function(){
+            var random1=Math.floor(Math.random()*5);
+            var random2=Math.floor(Math.random()*5);
+   $("#box ul").eq(random1).children().css("visibility","visible");
+   $("#box ul").eq(random1).children().eq(random2).siblings().css("visibility","hidden")
+   $("#box ul").eq(random1).siblings().children().css("visibility","hidden");
+//    $("#box ul").eq(random1).siblings().children().eq(random2).css("visibility","hidden");
+        // })
+
+},100)
+if(flag>30){
+    clearInterval(element.timeId)
+
+}
+console.log(flag)
+})
+
+    })
+    
+    
+    
+    
+    
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
